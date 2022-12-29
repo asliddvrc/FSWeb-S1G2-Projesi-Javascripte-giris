@@ -14,12 +14,19 @@ Bunu sağlamak için cevabı direk console'a loglayın veya çağırdığınız 
 Görev 1a - Ehliyet Yaşı (puanlamaya dahil değildir)
 
 Aşağıdakileri yapın:   
-   1. surucuYasi diye bir değişken yaratın ve bir sayı atayın.
+   1. surucuYasi diye bir değişken yaratın ve bir sayı atayın
    2. Eğer yaş 18'den büyük ise Console'da True, değilse False değeri yazdırın.
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
+ let surucuYasi= 27;
+ if (surucuYasi>18){
+  console.log("true");
+  
+ }
+else{
+  console.log("false");
+}
 
 
 /*
@@ -33,10 +40,15 @@ Aşağıdakileri yapınız:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
-
-
-
+let birinciDeger=10;
+let ikinciDeger=40;
+if (birinciDeger>ikinciDeger){
+  console.log("asli");
+}
+else {
+  birinciDeger=30
+  console.log(birinciDeger);
+}
 
 /*
 Görev 1c - String bir değeri Number'a dönüştürün (puanlamaya dahil değildir)
@@ -48,6 +60,9 @@ Aşağıdakileri yapın:
 
    İPUCU: Number metoduna bakabilirsin
 */
+let dogumYilim="1999";
+dogumYilim=1999;
+console.log(dogumYilim);
 
 
 
@@ -61,9 +76,16 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
-}
+function carpma(a,b){
+  let sonuc=a*b
+  return sonuc;
+  }
+  
+  console.log(carpma(4,5));
+//google crome consolda "concole.log" yapmadan çalıştı
+
+
+
 
 
 
@@ -77,9 +99,13 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
-}
+function kopeginYasi(a){
+ let sonuc=a*7
+ return sonuc
+ }
+console.log(kopeginYasi(8));
+
+
 
 
 
@@ -103,10 +129,24 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
+let number=Math.floor(Math.random()*3);
+const deger=["Taş","Kağıt", "Makas"];
+let secim=deger[number];
 
 function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+  if ((oyuncu==="Makas"&&bilgisayar==="Kağıt")
+  || (oyuncu==="Kağıt"&&bilgisayar==="Taş")
+  ||(oyuncu==="Taş"&&bilgisayar==="Makas")){
+  return"Kazandın!"
+  }
+  else if (oyuncu===bilgisayar){
+    return"Beraberlik"
+  }
+  else{
+    return"Kaybettin!"
+  }
 }
+console.log(oyun(secim,secim));
 
 
 
@@ -120,10 +160,11 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+let km=5;
+function milDonusturucu(km){
+ return(km*0.621371)
 }
-
+console.log(milDonusturucu(km)+'mil');
 
 
 //Görev 4b - Santimetreden Feet
@@ -133,11 +174,11 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 2. Aldığınız bu değeri feet'e dönüştürün
 3. feet değerini geri dönün
 */
-
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+let cm=1;
+function feetDonusturucu(cm){
+   return(cm/30.48)
 }
-
+console.log(feetDonusturucu(cm)+'feet');
 
 
 /* Görev 5 : 5 küçük maymun yatakta zıplamış şarkısını çocuklar için hazırladığımızı varsayalım. https://www.youtube.com/watch?v=e4EJ34xnlxk */
@@ -153,9 +194,15 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
+function cocukSarkisi(sayi){
+  let metin=sayi+" küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
+ return metin;
+  
 }
+for (let i = 5; i > 0; i--) {
+  console.log(cocukSarkisi(i));  
+ }
+
 
 
 /* Görev 6 : Not Hesaplayıcı */
@@ -173,8 +220,22 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+function notHesapla(not){
+if (not>=90){
+  return "A aldın"
+}
+else if (not>=80){
+  return "B aldın"
+}
+else if (not>=70){
+  return "C aldın"
+}
+else if (not>=60){
+  return"D aldın"
+}
+else {
+  return "F aldın"
+}
 }
 
 
